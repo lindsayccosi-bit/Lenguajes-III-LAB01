@@ -1,0 +1,92 @@
+// ARREGLO EN C++
+
+using namespace std;
+#include <iostream>
+
+int SumarElementos(int arreglo[], int tam)
+{
+    int suma = 0;
+    for (int i=0; i<tam;i++ ){
+        suma += arreglo[i];
+    }
+    return suma;
+}
+
+
+int main()
+{
+    int numeros[] = {3,5,6,3};
+    int tam = sizeof(numeros) / sizeof(numeros[0]);
+    
+    int resultado = SumarElementos(numeros, tam);
+    cout << "La suma de los elementos es: " << resultado;
+
+    return 0;
+}
+
+
+
+---------------------------------------------------
+//ARREGLO EN PYTHON
+
+
+def leer_arreglo(n):
+    arreglo = []
+    print("Introduce los elementos del arreglo:")
+    for i in range(n):
+        num = int(input())
+        arreglo.append(num)
+    return arreglo
+
+def sumar_numeros(arreglo):
+    suma = 0
+    for num in arreglo:
+        suma += num
+    return suma
+
+# Programa principal sin main()
+n = int(input("Introduce el tamaño del arreglo: "))
+arreglo = leer_arreglo(n)
+suma = sumar_numeros(arreglo)
+print("La suma de los elementos es:", suma)
+
+
+
+---------------------------------------
+// ARREGLO EN JAVA
+
+
+package ejercicio1;
+
+import java.util.Scanner;
+
+public class sumaArreglo {
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Introduce el tamaño del arreglo: ");
+		int n = scanner.nextInt();
+		int[] arreglo = new int[n];
+		System.out.println("Introduce los elementos del arreglo:");
+		leerArreglo(scanner, arreglo);
+		int suma = SumarNumeros(arreglo);
+		System.out.println("La suma de los elementos es:" + suma);
+		}
+	
+	// Función para leer los elementos del arreglo
+	public static void leerArreglo(Scanner scanner, int[] arreglo) {
+		for (int i = 0; i < arreglo.length; i++) {
+			arreglo[i] = scanner.nextInt();
+	}
+	}
+	
+	//Funcion que suma los elementos del arreglo
+	public static int SumarNumeros (int[] arreglo) {
+		int suma = 0;
+		for (int num : arreglo) {
+			suma += num;
+		}
+		return (int) suma;
+	}
+
+}
