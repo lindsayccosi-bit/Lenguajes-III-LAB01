@@ -1,0 +1,20 @@
+package ejercicio3;
+import java.util.Random;
+
+public class frecuenciaNumeros {
+	public static void main(String[] args) {
+		// Arreglo de 6 enteros; cada índice 0..5 representa caras 1..6.
+        int[] frecuencia = new int[6]; 
+        Random rand = new Random(); // Se crea un generador de números aleatorios.
+
+        for (int i = 0; i < 20000; i++) { // Se realiza 20,000 lanzamientos del “dado”.
+            int tiro = rand.nextInt(6); // 0 a 5
+            frecuencia[tiro]++;  // Se incrementa la frecuencia de la cara obtenida.
+        }
+
+        for (int i = 0; i < 6; i++) {  // Se recorren las 6 caras para mostrar los resultados.
+            System.out.println("Cara " + (i+1) + ": " + frecuencia[i] + " veces");
+        }
+    }
+
+}
