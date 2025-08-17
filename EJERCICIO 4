@@ -1,0 +1,23 @@
+package ejercicio4;
+
+import java.util.Scanner;
+
+public class decimalMenor {
+	// Se declara una función estática que recibe tres decimales.
+    public static float menor(float a, float b, float c) {
+        float m = a; // Se inicializa el mínimo con el primer valor.
+        if (b < m) m = b; // Si b es menor que el actual mínimo, actualizo m con b.
+        if (c < m) m = c; // Si c es menor que el mínimo (entre a y b), actualizo m con c.
+        return m;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese 3 números decimales: "); // Se solicita los tres valores.
+        float x = sc.nextFloat();
+        float y = sc.nextFloat();
+        float z = sc.nextFloat();
+
+        System.out.println("El menor es: " + menor(x, y, z)); // Se llama la función y muestro el resultado.
+    }
+}
