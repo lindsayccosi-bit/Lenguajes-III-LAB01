@@ -1,0 +1,29 @@
+package ejercicio5;
+
+import java.util.Scanner;
+
+public class estacionamiento {
+    public static double calcularCargo(int horas) { // Función que calcula el cargo según las reglas dadas.
+        double cargo;
+        if (horas <= 1) {  // Si es una hora o menos, se aplica tarifa base.
+            cargo = 3.0;
+        } else {   // Si se supera la primera hora…
+            cargo = 3.0 + (horas - 1) * 0.5; // Cada hora adicional suma S/ 0.50.
+        }
+        if (cargo > 12.0) cargo = 12.0; // máximo diario
+        return cargo;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int h;
+        do {
+            System.out.print("Ingrese horas de estacionamiento:  "); 
+            h = sc.nextInt();                      // Lee las horas.
+            if (h < 0) {                           // Si el valor ingresado es negativo…
+                System.out.println("El número de horas no puede ser negativo. Intente nuevamente.");
+            }
+        } while (h < 0);  
+        System.out.println("El cargo es: S/" + calcularCargo(h)); // Llama a la función y muestra el total a pagar.
+    }
+}
