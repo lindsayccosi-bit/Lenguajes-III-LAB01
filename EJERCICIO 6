@@ -1,0 +1,22 @@
+package ejercicio6;
+
+import java.util.Scanner;                        
+
+public class Convertidor {                        
+    public static int convertirASegundos(int h, int m, int s) { // Función que hara la conversión.
+    	// Se convierte horas a segundos (×3600), minutos a segundos (×60) y se suma todo.
+        return h * 3600 + m * 60 + s;           
+    }
+
+    public static void main(String[] args) {     
+        Scanner sc = new Scanner(System.in);     
+        System.out.print("Ingrese horas: ");     // Se solicita la parte de horas.
+        int h = sc.nextInt();                    
+        System.out.print("Ingrese minutos: ");   // Se solicita la parte de minutos.
+        int m = sc.nextInt();                    
+        System.out.print("Ingrese segundos: ");  // Se solicita la parte de segundos.
+        int s = sc.nextInt();                    // Leo los segundos.
+
+        System.out.println("Equivalente en segundos: " + convertirASegundos(h, m, s)); 
+    }                                            
+}                                                
